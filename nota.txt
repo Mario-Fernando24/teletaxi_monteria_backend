@@ -1,1 +1,8 @@
-levantar el servidor
+# levantar el servidor
+npm run start:dev
+
+# para ver los comandos que tenemos disponible
+nest g --help
+
+# crear modulos
+nest g mo users
