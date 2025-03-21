@@ -1,7 +1,7 @@
 import { IsEmail, IsNotEmpty, IsString, MinLength } from "class-validator";
 
 //para saber que informacion vamos a mandar en la peticion
-export class RegisterUserDto{
+export class RegisterAuthDto{
 
     //Asegurarse que sea de tipo string
     @IsNotEmpty()
