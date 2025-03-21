@@ -5,13 +5,14 @@ import { Repository } from 'typeorm';
 import { RegisterAuthDto } from './dto/register-auth.dto';
 import { LoginAuthDto } from './dto/login-auth.dto';
 import * as bcrypt from 'bcryptjs'; 
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
 
-    constructor(@InjectRepository(User) private userRepository: Repository<User>){
-
-    }
+    constructor(@InjectRepository(User) private userRepository: Repository<User>,
+    private jwtService: JwtService
+){}
 
 
    async register(user: RegisterAuthDto){
@@ -51,9 +52,15 @@ export class AuthService {
             return new HttpException('La contraseña es incorrecta', HttpStatus.FORBIDDEN)
         } 
 
-        return usersEncontrado;
+        const payload ={ id: usersEncontrado.id, name: usersEncontrado.name };
 
+        const token = this.jwtService.sign(payload);
+        const data = {
+            user: usersEncontrado, 
+            token: token
+        }
 
+        return data;
 
     }
 
