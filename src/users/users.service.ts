@@ -12,6 +12,7 @@ export class UsersService {
 
     }
 
+    //METODO PARA CREAR UN NUEVO USUARIO Y RECIBE UN USUARIO QUE ES LO QUE SE VA A INSERTAR
     create(user: CreateUserDto ){
         const newUser = this.usersRepository.create(user);
         return this.usersRepository.save(newUser);

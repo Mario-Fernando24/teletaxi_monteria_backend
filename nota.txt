@@ -6,3 +6,17 @@ nest g --help
 
 # crear modulos
 nest g mo users
+#crear el service
+nest g service auth
+
+# general los controladores 
+nest g co users --no-spec 
+
+# nos ayuda hacer validacion a los campos 
+npm i --save class-validator class-transformer
+
+# Abrir la parte administrativa 
+http://localhost:8888/phpMyAdmin5/
+
+#Encriptar contraseña
+npm install bcrypt

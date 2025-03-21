@@ -6,10 +6,9 @@ import { UsersService } from './users.service';
 @Controller('users')
 export class UsersController {
 
-    constructor(private userService: UsersService){
-
-    }
+    constructor(private userService: UsersService){}
  
+    //METODO ES DE METODO POST  http://localhost/users -> POST
     @Post()
     create(@Body() user: CreateUserDto) {
         return this.userService.create(user);

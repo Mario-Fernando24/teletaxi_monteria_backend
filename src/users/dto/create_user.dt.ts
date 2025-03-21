@@ -1,11 +1,11 @@
 //para saber que informacion vamos a mandar en la peticion
 export class CreateUserDto{
 
-    email: String;
-    name: String;
-    lastname: String;
-    phone: String;
-    image?: String;
-    password: String;
-    notification_token?: String;
+    email: string;
+    name: string;
+    lastname: string;
+    phone: string;
+    image?: string;
+    password: string;
+    notification_token?: string;
 }
